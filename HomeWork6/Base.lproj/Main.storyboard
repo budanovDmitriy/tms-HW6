@@ -45,6 +45,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S2b-iv-17M">
+                                <rect key="frame" x="182" y="396" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="Bit-27-7wE"/>
+                                    <constraint firstAttribute="height" constant="50" id="FsI-KJ-aw0"/>
+                                </constraints>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Aso-7m-jkN">
                                 <rect key="frame" x="107" y="321" width="200" height="200"/>
                                 <subviews>
@@ -110,13 +117,6 @@
                                     <constraint firstItem="0yt-LY-bZq" firstAttribute="centerY" secondItem="Aso-7m-jkN" secondAttribute="centerY" id="lup-r7-JqQ"/>
                                     <constraint firstItem="ikD-FI-jla" firstAttribute="top" secondItem="Aso-7m-jkN" secondAttribute="top" id="sNr-kz-JcZ"/>
                                     <constraint firstAttribute="height" constant="200" id="tUP-NX-r2p"/>
-                                </constraints>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S2b-iv-17M">
-                                <rect key="frame" x="182" y="396" width="50" height="50"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="50" id="Bit-27-7wE"/>
-                                    <constraint firstAttribute="height" constant="50" id="FsI-KJ-aw0"/>
                                 </constraints>
                             </view>
                         </subviews>

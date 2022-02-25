@@ -20,7 +20,7 @@ class ModalViewController: UIViewController {
         // Do any additional setup after loading the view.
 
     private func setupSubviews() {
-        runningRoundView.backgroundColor = .green
+        runningRoundView.backgroundColor = .blue
         runningRoundView.layer.cornerRadius = 25.0
         runningRoundView.frame =
         CGRect( x:super.view.bounds.width / 2 - 25, y: super.view.bounds.height / 2 - 25 , width: 50, height: 50)
