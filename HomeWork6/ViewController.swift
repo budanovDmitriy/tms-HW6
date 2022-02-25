@@ -24,6 +24,7 @@ class ViewController: UIViewController {
         let superVievHeight = self.view.bounds.height
         let superVievWidth = self.view.bounds.width
         catToy.frame = CGRect(x: Double(superVievWidth / 2 - 25), y: Double(superVievHeight / 2 - 25), width: 50, height: 50)
+        catToy.layer.cornerRadius = 25.0
         
         catToy.addTarget(self, action: #selector(btnTouched), for: .touchUpInside)
         self.view.addSubview(catToy)
@@ -39,6 +40,8 @@ class ViewController: UIViewController {
             y:Double(Int.random(in:0..<Int(maxY))),
         width: 50,
         height: 50)
+        catToy.layer.cornerRadius = 25.0
+
         
         
     }
