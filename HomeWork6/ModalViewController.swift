@@ -41,26 +41,26 @@ class ModalViewController: UIViewController {
     
         @objc private func arrowUping(_ sender: Any) {
             if
-                runningRoundView.frame.minY > 25 {
+                runningRoundView.frame.origin.y > 25 {
             runningRoundView.frame = CGRect(x:runningRoundView.frame.origin.x  , y: runningRoundView.frame.origin.y + 10, width: 50, height: 50)
             }
         
     }
         @objc private func arrowDowning(_ sender: Any) {
-            if runningRoundView.frame.maxY < self.view.bounds.height - 25 {
+            if runningRoundView.frame.origin.y < self.view.bounds.height - 25 {
                 runningRoundView.frame = CGRect(x:runningRoundView.frame.origin.x  , y: runningRoundView.frame.origin.y + 10, width: 50, height: 50)
                 
             }
     }
    
         @objc private func arrowRighting(_ sender: Any) {
-            if runningRoundView.frame.maxX < self.view.bounds.width - 25  {
+            if runningRoundView.frame.origin.x < self.view.bounds.width - 25  {
             runningRoundView.frame = CGRect(x:runningRoundView.frame.origin.x + 20 , y: runningRoundView.frame.origin.y, width: 50, height: 50)
             }
     }
         @objc private func arrowLefting(
         _ sender: Any) {
-            if runningRoundView.frame.maxX >  25  {
+            if runningRoundView.frame.origin.x >  25  {
             runningRoundView.frame = CGRect(x:runningRoundView.frame.origin.x - 10 , y: runningRoundView.frame.origin.y, width: 50, height: 50)
             }
     }

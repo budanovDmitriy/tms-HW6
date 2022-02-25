@@ -17,9 +17,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S7l-1A-VmV">
-                                <rect key="frame" x="173.5" y="815" width="67" height="31"/>
+                                <rect key="frame" x="150.5" y="815" width="113.5" height="31"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Change game"/>
                                 <connections>
                                     <segue destination="dcx-FR-hIy" kind="show" id="iCz-hg-W5H"/>
                                 </connections>
