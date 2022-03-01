@@ -9,16 +9,21 @@ import UIKit
 
 class MainViewController : UIViewController {
     
+    // MARK: - Public properties
+
     var colarful:Bool = false
     var name:String? = nil
     var score = 0
     var results = [String : Int]()
     var bestScore:Int?
     
+    // MARK: - IBOutlets
+
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var scoreLabel: UILabel!
     
-    
+    // MARK: - Override methods
+
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
         bestScore = results[name ?? "" ]
@@ -29,6 +34,7 @@ class MainViewController : UIViewController {
         }
         
     }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destinationViewController = segue.destination as? ViewController{
         destinationViewController.colarful = colarful

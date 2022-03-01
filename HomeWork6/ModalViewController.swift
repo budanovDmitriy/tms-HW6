@@ -9,10 +9,16 @@ import UIKit
 
 class ModalViewController: UIViewController {
     
+    // MARK: - Public properties
 
     var colorful = true
     var name:String? = nil
+    
+    // MARK: - IBOutlets
+
     @IBOutlet weak var field: UITextField!
+    
+    // MARK: - IBActions
     
     @IBAction func switchPressed(_ sender: UISwitch ) {
         colorful = sender.isOn

@@ -10,23 +10,26 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    // MARK: - Public properties
+
     var name = ""
     var score:Int = 0
     var colarful = false
     var screenWidth = 0
     var screenHeight = 0
     var circleRadius = 0
-    @IBOutlet weak var catToy: UIButton!
     
+    // MARK: - IBOutlets
+
+    @IBOutlet weak var catToy: UIButton!
     @IBOutlet weak var scoreLabel: UILabel!
+    
+    // MARK: - Override methods
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setupCircleView()
         
-    }
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-
     }
     
     private func setupCircleView() {
@@ -37,6 +40,8 @@ class ViewController: UIViewController {
         catToy.layer.cornerRadius = CGFloat(circleRadius/2)
         catToy.backgroundColor = .red
     }
+    
+    // MARK: - IBActions
     
     @IBAction func btnTouched(_ sender: Any) {
         score = score + 1
@@ -52,13 +57,13 @@ class ViewController: UIViewController {
             catToy.backgroundColor = UIColor.rgb(red: CGFloat(arc4random_uniform(255)), green: CGFloat(arc4random_uniform(255)), blue:CGFloat( arc4random_uniform(255)))
         }
     }
+    
     @IBAction func saving(_ sender: Any) {
         if let ParentViewController = self.presentingViewController as? MainViewController {
         ParentViewController.score = score
         }
         dismiss(animated: true, completion:nil)
     }
-    
 }
 extension UIColor {
     static func rgb(red: CGFloat, green: CGFloat, blue: CGFloat) -> UIColor {
