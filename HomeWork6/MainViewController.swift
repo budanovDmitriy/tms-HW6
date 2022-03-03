@@ -22,24 +22,32 @@ class MainViewController : UIViewController {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var scoreLabel: UILabel!
     
+    // MARK: - Private methods
+    
+    private func calculateBestScore(){
+        bestScore = max(score,bestScore ?? 0)
+        
+        nameLabel.text = "Nickname: \(name ?? "")"
+        scoreLabel.text = "Your best score: \(bestScore ?? 0)"
+    }
+    
     // MARK: - Override methods
 
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
-        bestScore = results[name ?? "" ]
-        nameLabel.text = "Nickname: \(name ?? "")"
-        scoreLabel.text = "Your best score: \(bestScore ?? 0)"
-        if score > results[name ?? ""] ?? 0 {
-            results.updateValue(score, forKey: name ?? "")
-        }
-        
+        calculateBestScore()
+        print("iewWillLayoutSubviews")
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let destinationViewController = segue.destination as? ViewController{
-        destinationViewController.colarful = colarful
-            destinationViewController.name = name ?? ""
-        
-        }
+    @IBAction func settingButtonPressed(_ sender: UIButton) {
+        guard let viewController = storyboard?.instantiateViewController(withIdentifier: "settingViewContr") as? ModalViewController else {return}
+        self.navigationController?.pushViewController(viewController, animated: true)
+    }
+    
+    @IBAction func gameButtonPressed(_ sender: UIButton) {
+        guard let viewController = storyboard?.instantiateViewController(withIdentifier: "viewContr") as? ViewController else {return}
+        viewController.colarful = colarful
+        viewController.name = name ?? ""
+        self.navigationController?.pushViewController(viewController, animated: true)
     }
 }

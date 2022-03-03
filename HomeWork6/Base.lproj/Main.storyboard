@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="9u6-8I-A1d">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="M2F-D6-l7d">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
@@ -7,7 +7,23 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Main View Controller-->
+        <!--Navigation Controller-->
+        <scene sceneID="GaC-WK-sWU">
+            <objects>
+                <navigationController id="M2F-D6-l7d" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Dqa-6q-1Li">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="9u6-8I-A1d" kind="relationship" relationship="rootViewController" id="GSm-MK-OAw"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9No-zc-mGS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1736" y="82"/>
+        </scene>
+        <!--Game Menu-->
         <scene sceneID="eAZ-hH-oYg">
             <objects>
                 <viewController id="9u6-8I-A1d" customClass="MainViewController" customModule="HomeWork6" customModuleProvider="target" sceneMemberID="viewController">
@@ -25,12 +41,12 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9qH-G6-GPr">
-                                <rect key="frame" x="20" y="64" width="77.5" height="31"/>
+                                <rect key="frame" x="20" y="108" width="77.5" height="31"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Settings"/>
                                 <connections>
                                     <action selector="settingButton:" destination="pWt-9U-9lW" eventType="touchUpInside" id="yKx-be-ZYm"/>
-                                    <segue destination="dcx-FR-hIy" kind="show" identifier="toSettings" id="Hit-H3-sC5"/>
+                                    <action selector="settingButtonPressed:" destination="9u6-8I-A1d" eventType="touchUpInside" id="2tm-2q-eyC"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ex7-x8-sRG">
@@ -38,8 +54,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Start Game"/>
                                 <connections>
-                                    <action selector="gameButton:" destination="pWt-9U-9lW" eventType="touchUpInside" id="JTC-y1-1FW"/>
-                                    <segue destination="BYZ-38-t0r" kind="show" identifier="toGame" id="h0d-X6-xKQ"/>
+                                    <action selector="gameButtonPressed:" destination="9u6-8I-A1d" eventType="touchUpInside" id="Exd-Eg-vqf"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vFe-l5-Frc">
@@ -66,7 +81,7 @@
                             <constraint firstItem="vFe-l5-Frc" firstAttribute="centerX" secondItem="8Rb-mK-jUe" secondAttribute="centerX" id="rRo-no-FMd"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="prq-TR-olr"/>
+                    <navigationItem key="navigationItem" title="Game Menu" id="prq-TR-olr"/>
                     <connections>
                         <outlet property="nameLabel" destination="Re9-7I-uEL" id="rqC-Z4-lfs"/>
                         <outlet property="scoreLabel" destination="vFe-l5-Frc" id="QUv-tX-Mpv"/>
@@ -77,12 +92,12 @@
             </objects>
             <point key="canvasLocation" x="-742" y="82"/>
         </scene>
-        <!--View Controller-->
+        <!--Game-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="HomeWork6" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                <viewController storyboardIdentifier="viewContr" id="BYZ-38-t0r" customClass="ViewController" customModule="HomeWork6" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" restorationIdentifier="secondContr" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CeC-U0-iIL">
@@ -95,13 +110,13 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your score: 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P6D-aJ-tnG">
-                                <rect key="frame" x="157" y="20" width="100.5" height="21"/>
+                                <rect key="frame" x="157" y="64" width="100.5" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2ay-2H-gTb">
-                                <rect key="frame" x="179.5" y="737" width="55.5" height="31"/>
+                                <rect key="frame" x="179.5" y="791" width="55.5" height="31"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Save"/>
                                 <connections>
@@ -118,7 +133,7 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="2ay-2H-gTb" secondAttribute="bottom" constant="40" id="xYt-Nx-dgO"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="Yln-rQ-d2i"/>
+                    <navigationItem key="navigationItem" title="Game" id="Yln-rQ-d2i"/>
                     <connections>
                         <outlet property="catToy" destination="CeC-U0-iIL" id="aTx-1A-m6u"/>
                         <outlet property="scoreLabel" destination="P6D-aJ-tnG" id="60W-KX-RaF"/>
@@ -128,34 +143,28 @@
             </objects>
             <point key="canvasLocation" x="18.840579710144929" y="-80.357142857142847"/>
         </scene>
-        <!--Modal View Controller-->
+        <!--Settings-->
         <scene sceneID="lIE-3Y-w8C">
             <objects>
-                <viewController id="dcx-FR-hIy" customClass="ModalViewController" customModule="HomeWork6" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="settingViewContr" id="dcx-FR-hIy" customClass="ModalViewController" customModule="HomeWork6" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" restorationIdentifier="ModalViewController" id="oOu-83-00r">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Settings" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vna-as-5r3">
-                                <rect key="frame" x="153.5" y="20" width="107" height="36"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fpc-QD-XdK">
-                                <rect key="frame" x="182.5" y="405.5" width="51" height="31"/>
+                                <rect key="frame" x="182.5" y="432.5" width="51" height="31"/>
                                 <connections>
                                     <action selector="switchPressed:" destination="dcx-FR-hIy" eventType="valueChanged" id="jMk-6C-2oZ"/>
                                 </connections>
                             </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cirle change color" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RvQ-18-Ggn">
-                                <rect key="frame" x="138" y="364.5" width="138" height="21"/>
+                                <rect key="frame" x="138" y="391.5" width="138" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TqX-UA-sW8">
-                                <rect key="frame" x="151.5" y="771" width="111" height="31"/>
+                                <rect key="frame" x="151.5" y="825" width="111" height="31"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Save settings"/>
                                 <connections>
@@ -163,7 +172,7 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EE7-3Z-vs0">
-                                <rect key="frame" x="157" y="310.5" width="100" height="34"/>
+                                <rect key="frame" x="157" y="337.5" width="100" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="MLl-b8-sPG"/>
                                 </constraints>
@@ -171,7 +180,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter your nickname" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KUF-zg-Be1">
-                                <rect key="frame" x="129" y="269.5" width="156" height="21"/>
+                                <rect key="frame" x="129" y="296.5" width="156" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -182,9 +191,7 @@
                         <constraints>
                             <constraint firstItem="EE7-3Z-vs0" firstAttribute="top" secondItem="KUF-zg-Be1" secondAttribute="bottom" constant="20" id="23y-KL-LUj"/>
                             <constraint firstItem="fpc-QD-XdK" firstAttribute="centerX" secondItem="oOu-83-00r" secondAttribute="centerX" id="4OS-yB-MTy"/>
-                            <constraint firstItem="vna-as-5r3" firstAttribute="top" secondItem="WaD-3b-hFS" secondAttribute="top" constant="20" id="QTT-21-tDP"/>
                             <constraint firstItem="RvQ-18-Ggn" firstAttribute="top" secondItem="EE7-3Z-vs0" secondAttribute="bottom" constant="20" id="S5k-ek-pEh"/>
-                            <constraint firstItem="vna-as-5r3" firstAttribute="centerX" secondItem="oOu-83-00r" secondAttribute="centerX" id="VMX-JC-ZNr"/>
                             <constraint firstAttribute="bottom" secondItem="TqX-UA-sW8" secondAttribute="bottom" constant="40" id="Y8K-X6-lXe"/>
                             <constraint firstItem="EE7-3Z-vs0" firstAttribute="centerX" secondItem="oOu-83-00r" secondAttribute="centerX" id="hHL-KG-CiV"/>
                             <constraint firstItem="TqX-UA-sW8" firstAttribute="centerX" secondItem="oOu-83-00r" secondAttribute="centerX" id="nDb-88-zbt"/>
@@ -194,7 +201,7 @@
                             <constraint firstItem="fpc-QD-XdK" firstAttribute="centerY" secondItem="oOu-83-00r" secondAttribute="centerY" id="ywd-OR-l80"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="tYc-7Z-Kb0"/>
+                    <navigationItem key="navigationItem" title="Settings" id="tYc-7Z-Kb0"/>
                     <connections>
                         <outlet property="field" destination="EE7-3Z-vs0" id="MvT-mo-IEE"/>
                     </connections>

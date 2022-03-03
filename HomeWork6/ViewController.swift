@@ -59,10 +59,13 @@ class ViewController: UIViewController {
     }
     
     @IBAction func saving(_ sender: Any) {
-        if let ParentViewController = self.presentingViewController as? MainViewController {
-        ParentViewController.score = score
+        let allControllers : [UIViewController] = navigationController?.viewControllers ?? []
+        for controllers in allControllers {
+                guard let mainViewController = controllers as? MainViewController
+            else {continue}
+            mainViewController.score = score
+            navigationController?.popViewController(animated: true)
         }
-        dismiss(animated: true, completion:nil)
     }
 }
 extension UIColor {
