@@ -15,9 +15,7 @@ class ViewController: UIViewController {
     var name = ""
     var score:Int = 0
     var colarful = false
-    var screenWidth = 0
-    var screenHeight = 0
-    var circleRadius = 0
+    var circleRadius:CGFloat = 0
     
     // MARK: - IBOutlets
 
@@ -36,9 +34,11 @@ class ViewController: UIViewController {
         circleRadius = 50
         let superViewHeight = self.view.bounds.height
         let superViewWidth = self.view.bounds.width
-        catToy.frame = CGRect(x: Int(Double(superViewWidth / 2 - 25)), y: Int(Double(superViewHeight / 2 - 25)), width: circleRadius, height: circleRadius)
-        catToy.layer.cornerRadius = CGFloat(circleRadius/2)
-        catToy.backgroundColor = .red
+        catToy.frame = CGRect(x: superViewWidth / 2 - circleRadius/2, y: superViewHeight / 2 - circleRadius/2, width: circleRadius, height: circleRadius)
+        catToy.makeRound()
+        catToy.addGradient(with: [UIColor.rgb(red: CGFloat(arc4random_uniform(255)), green: CGFloat(arc4random_uniform(255)), blue:CGFloat( arc4random_uniform(255))),UIColor.rgb(red: CGFloat(arc4random_uniform(255)), green: CGFloat(arc4random_uniform(255)), blue:CGFloat( arc4random_uniform(255)))])
+        catToy.addShadow()
+        self.view.layoutIfNeeded()
     }
     
     // MARK: - IBActions
@@ -52,10 +52,9 @@ class ViewController: UIViewController {
         let maxX = superVievWidth - CGFloat(circleRadius)
         catToy.frame.origin.x = CGFloat.random(in:CGFloat(circleRadius/2)...maxX )
         catToy.frame.origin.y = CGFloat.random(in: CGFloat(circleRadius/2)...maxY)
-        catToy.layer.cornerRadius = CGFloat(circleRadius/2)
-        if colarful == true {
-            catToy.backgroundColor = UIColor.rgb(red: CGFloat(arc4random_uniform(255)), green: CGFloat(arc4random_uniform(255)), blue:CGFloat( arc4random_uniform(255)))
-        }
+        catToy.makeRound()
+        catToy.addGradient(with: [UIColor.rgb(red: CGFloat(arc4random_uniform(255)), green: CGFloat(arc4random_uniform(255)), blue:CGFloat( arc4random_uniform(255))),UIColor.rgb(red: CGFloat(arc4random_uniform(255)), green: CGFloat(arc4random_uniform(255)), blue:CGFloat( arc4random_uniform(255)))])
+        catToy.addShadow()
     }
     
     @IBAction func saving(_ sender: Any) {
